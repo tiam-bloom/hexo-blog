@@ -38,6 +38,6 @@
     "markdown-it-expandable": "^1.0.2",
     "markdown-it-imsize": "^2.0.1",
     "or": "^0.2.0",
-    "yarn": "^1.22.19"
+    "yarn": "^1.22.21"
   }
 }
