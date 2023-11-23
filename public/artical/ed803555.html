@@ -1,0 +1,279 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>WX小程序--音乐播放器 | J's Blog</title><meta name="author" content="Tiam"><meta name="copyright" content="Tiam"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="从最开始了解微信小程序到萌生想法想自己做一个发布到自己的公众号，中间还是隔了蛮久，近几天突然有了想法做什么了，今天却因为个人小程序的原因审核不通过，可气。 最开始也是一点也不了解，甚至小程序用什么语言写的也不知道。萌生了想法就去找官方文档查看，寥寥草草的差不多看了一晚上，知道了小程序的文件结构以及所需的编程语言，主要编程语言是JavaScript，好在JavaScript有学过一点，至少还有点基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WX小程序--音乐播放器">
+<meta property="og:url" content="https://www.yujing.icu/artical/ed803555.html">
+<meta property="og:site_name" content="J&#39;s Blog">
+<meta property="og:description" content="从最开始了解微信小程序到萌生想法想自己做一个发布到自己的公众号，中间还是隔了蛮久，近几天突然有了想法做什么了，今天却因为个人小程序的原因审核不通过，可气。 最开始也是一点也不了解，甚至小程序用什么语言写的也不知道。萌生了想法就去找官方文档查看，寥寥草草的差不多看了一晚上，知道了小程序的文件结构以及所需的编程语言，主要编程语言是JavaScript，好在JavaScript有学过一点，至少还有点基础">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://qiniu.yujing.fit/image/nice/zentree_1.png">
+<meta property="article:published_time" content="2021-09-18T15:00:37.000Z">
+<meta property="article:modified_time" content="2022-11-19T05:58:27.104Z">
+<meta property="article:author" content="Tiam">
+<meta property="article:tag" content="wx小程序">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://qiniu.yujing.fit/image/nice/zentree_1.png"><link rel="shortcut icon" href="https://qiniu.yujing.icu/headImage/icon.png"><link rel="canonical" href="https://www.yujing.icu/artical/ed803555"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#2d3035","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'WX小程序--音乐播放器',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-11-19 13:58:27'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/universe.css"><link rel="stylesheet" href="/css/background.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://qiniu.yujing.icu/headImage/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20201030005750.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">57</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">74</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">25</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('http://qiniu.yujing.fit/image/nice/zentree_1.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">J's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">WX小程序--音乐播放器</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-09-18T15:00:37.000Z" title="发表于 2021-09-18 23:00:37">2021-09-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-11-19T05:58:27.104Z" title="更新于 2022-11-19 13:58:27">2022-11-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">小程序</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="WX小程序--音乐播放器"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>从最开始了解微信小程序到萌生想法想自己做一个发布到自己的公众号，中间还是隔了蛮久，近几天突然有了想法做什么了，今天却因为个人小程序的原因审核不通过，可气。</p>
+<p>最开始也是一点也不了解，甚至小程序用什么语言写的也不知道。萌生了想法就去找<a target="_blank" rel="noopener external nofollow noreferrer" href="https://developers.weixin.qq.com/miniprogram/dev/framework/quickstart/">官方文档</a>查看，寥寥草草的差不多看了一晚上，知道了小程序的文件结构以及所需的编程语言，主要编程语言是JavaScript，好在JavaScript有学过一点，至少还有点基础。还有新的语言，WXML和WXSS，不过呢WXML和HTML极为相似，WXSS和CSS极为相似，正好HTML和CSS都学过一点，还记得一点基本语法。也不算新的东西。还有个配置文件的JSON格式，虽不是编程语言，也没有学过，可是之前几次做项目却用过几次，大概还记得怎么用。就这样，觉得自己应该可以做出来，第二天就开始新建项目做了。</p>
+<p>当然过程中会遇到很多很多的困难，只能一步一步慢慢解决，慢慢来了。</p>
+<p>实践的时候，总觉得没有之前那么逻辑顺畅，而且有了之前的经验应该会该快更好才对。上学期用Vue映入API接口做了个网页的音乐播放器，然后又用uni-app做了个表格的增删改查。虽不一样，却有很多类似的地方可以借鉴。比如：页面间传递数据、将API获取到的数据渲染到页面上等等。</p>
+<p>虽现在还没有做得很好，但是音乐播放的基本功能还是实现了，页面样式还没有写，丑得一批，可惜没有设计的头脑，目前的想法只有借鉴其他音乐播放器的样式排版了（虽然不一定能做得出来哈哈）。</p>
+<p>好了，记录一下到完成到现在的功能的思路及实现。（目前2021/9/18）</p>
+<hr>
+<hr>
+<p>先是音乐资源，刚好可以借用到上次Vue音乐播放器用的<a target="_blank" rel="noopener external nofollow noreferrer" href="https://autumnfish.cn">网易云API</a>，然后优先要实现最主要的基本功能，功能太少无实际作用，太多难以实现又复杂。那么初步定义的功能有什么呢？那必定要实现查询功能了，想听什么都可以查寻到，再是能让查询到歌曲能够播放出来（有声就行）。哈，就两个功能，感觉挺简单。</p>
+<p>创建一个小程序的新项目，有一个默认的首页，就默认当作首页了，添加一个按钮，点击进入首页，就是搜索页面，输入搜索，将查询到的歌曲渲染到页面，点击歌曲进入播放页面，播放歌曲。</p>
+<h3 id="注册页面">注册页面<a class="header-anchor" href="#注册页面">#</a></h3>
+<p>所以需要在配置文件app.json中注册两个层级的页面，一个显示歌曲列表music，一个显示播放界面player。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://yujing.fit/wp-content/uploads/2021/09/%E5%9B%BE%E7%89%87-58.png" alt=""></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://yujing.fit/wp-content/uploads/2021/09/%E5%9B%BE%E7%89%87-57.png" alt=""></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://yujing.fit/wp-content/uploads/2021/09/%E5%9B%BE%E7%89%87-59.png" alt=""></p>
+<h3 id="页面跳转">页面跳转<a class="header-anchor" href="#页面跳转">#</a></h3>
+<p>在首页wxml添加一个按钮,在JS文件绑定点击事件,跳转页面.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bindtap=&quot;bindViewMusic&quot;  //绑定函数</span><br></pre></td></tr></table></figure>
+<p>页面跳转: <strong>wx.navigateTo</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wx.<span class="title function_">navigateTo</span>(&#123;</span><br><span class="line">  <span class="attr">url</span>: <span class="string">&#x27;../music/music&#x27;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="music界面">music界面<a class="header-anchor" href="#music界面">#</a></h2>
+<h3 id="实时显示搜索结果">实时显示搜索结果<a class="header-anchor" href="#实时显示搜索结果">#</a></h3>
+<p>就是能够实现每输入一个字就能显示对应的结果,而不是必须全部输入完,点击搜索才进行搜索。那么搜索按钮也省去了没什么用，一个输入框就够了。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">&quot;search-input&quot;</span> <span class="attr">maxlength</span>=<span class="string">&quot;10&quot;</span> <span class="attr">bindinput</span>=<span class="string">&quot;bindKeyInput&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入你想要听的歌曲&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>bindinput</strong> ， 编辑器内容改变时触发 ，调用bindKeyInput函数，即每次输入都会触发。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">bindKeyInput</span>:<span class="keyword">function</span>(<span class="params">e</span>) &#123;        </span><br><span class="line">      <span class="keyword">var</span> that =<span class="variable language_">this</span>;</span><br><span class="line">      wx.<span class="title function_">request</span>(&#123;</span><br><span class="line">        <span class="attr">url</span>: <span class="string">&#x27;https://autumnfish.cn/search?keywords=&#x27;</span> + e.<span class="property">detail</span>.<span class="property">value</span>,</span><br><span class="line">        <span class="title function_">success</span>(<span class="params">res</span>) &#123;</span><br><span class="line">          that.<span class="title function_">setData</span>(&#123;</span><br><span class="line">             <span class="attr">objectArray</span>: res.<span class="property">data</span>.<span class="property">result</span>.<span class="property">songs</span> <span class="comment">//将查询到的数据实时渲染到列表中</span></span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://developers.weixin.qq.com/miniprogram/dev/api/network/request/wx.request.html"><strong>wx.request</strong></a> ，发起 HTTPS 网络请求。调用API接口。</p>
+<p>调用成功后将查询到的数组数据存储到 objectArray ，然后通过wx:for，列表渲染到界面上。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;view id=&quot;&#123;&#123;item.id&#125;&#125;&quot; bindtap=&quot;playerView&quot; wx:for=&quot;&#123;&#123;objectArray&#125;&#125;&quot; &gt;&#123;&#123;index+1&#125;&#125;、&#123;&#123;item.name&#125;&#125;--&#123;&#123;item.artists[0].name&#125;&#125; &lt;/view&gt;</span><br></pre></td></tr></table></figure>
+<p>在组件上使用 <strong>wx:for</strong> 控制属性绑定一个数组，即可使用数组中各项的数据重复渲染该组件。默认数组的当前项的下标变量名默认为 index，数组当前项的变量名默认为 item。</p>
+<p>可先通过控制台将接受数据打印出来，查看数据形式。比如搜索“天下”，如下：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://yujing.fit/wp-content/uploads/2021/09/%E5%9B%BE%E7%89%87-60.png" alt=""></p>
+<h2 id="player界面">player界面<a class="header-anchor" href="#player界面">#</a></h2>
+<h3 id="页面数据传递">页面数据传递<a class="header-anchor" href="#页面数据传递">#</a></h3>
+<p>下一步为渲染到页面的歌曲列表绑定事件，使其点击能被跳转到播放页面，播放歌曲。</p>
+<p>每一首歌都不同，怎么确定播放的点击那首呢？那就需要点击跳转时，还需要将当前点击的歌曲唯一Id，传入到下一个界面。然后通过Id获取到歌曲的播放地址url和歌曲名、歌手名等相关信息。在页面播放歌曲，并渲染出歌曲的相关信息。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//跳转播放页面,带当前歌曲id传入下个页面</span></span><br><span class="line">    <span class="title function_">playerView</span>(<span class="params">e</span>)&#123;</span><br><span class="line">      wx.<span class="title function_">setStorageSync</span>(<span class="string">&#x27;id&#x27;</span>, e.<span class="property">currentTarget</span>.<span class="property">id</span>)</span><br><span class="line">      <span class="keyword">var</span> id = wx.<span class="title function_">getStorageSync</span>(<span class="string">&#x27;id&#x27;</span>);</span><br><span class="line">      wx.<span class="title function_">navigateTo</span>(&#123;</span><br><span class="line">        <span class="attr">url</span>: <span class="string">&#x27;../player/player?id=&#x27;</span>+id</span><br><span class="line">      &#125;)</span><br><span class="line">     &#125;  </span><br></pre></td></tr></table></figure>
+<p><strong>wx.setStorageSync(string key, any data)</strong></p>
+<h3 id="播放歌曲">播放歌曲<a class="header-anchor" href="#播放歌曲">#</a></h3>
+<p>在player界面接收到Id后，调用API接收到歌曲的相关信息。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">onLoad</span>: <span class="keyword">function</span> (<span class="params">option</span>) &#123; </span><br><span class="line">    <span class="keyword">var</span> that =<span class="variable language_">this</span>;</span><br><span class="line">    wx.<span class="title function_">request</span>(&#123; </span><br><span class="line">      <span class="attr">url</span>: <span class="string">&#x27;https://autumnfish.cn/song/url?id=&#x27;</span> + option.<span class="property">id</span>, <span class="comment">//根据id获取歌曲</span></span><br><span class="line">      <span class="title function_">success</span>(<span class="params">res</span>) &#123;</span><br><span class="line">        <span class="comment">//console.log(option.id) //得到当前点击歌曲id</span></span><br><span class="line">        <span class="comment">//console.log(res.data.data); //获取当前歌曲信息</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(res.<span class="property">data</span>.<span class="property">data</span>[<span class="number">0</span>].<span class="property">url</span>)</span><br><span class="line">        that.<span class="title function_">setData</span>(&#123;</span><br><span class="line">          <span class="attr">musicUrl</span>: res.<span class="property">data</span>.<span class="property">data</span>[<span class="number">0</span>].<span class="property">url</span>     <span class="comment">//获取歌曲播放地址  </span></span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="comment">///////留白,插入下片代码</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接口地址不一样,所以会调用两次。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">  wx.<span class="title function_">request</span>(&#123; </span><br><span class="line">  <span class="attr">url</span>: <span class="string">&#x27;https://autumnfish.cn/search?keywords=&#x27;</span> + option.<span class="property">id</span>, <span class="comment">//根据id获取歌曲</span></span><br><span class="line">  <span class="title function_">success</span>(<span class="params">res</span>) &#123;</span><br><span class="line">    that.<span class="title function_">setData</span>(&#123;</span><br><span class="line">      <span class="attr">imgSrc</span>: res.<span class="property">data</span>.<span class="property">result</span>.<span class="property">songs</span>[<span class="number">0</span>].<span class="property">artists</span>[<span class="number">0</span>].<span class="property">img1v1Url</span>,  <span class="comment">//获取专辑封面</span></span><br><span class="line">      <span class="attr">author</span>: res.<span class="property">data</span>.<span class="property">result</span>.<span class="property">songs</span>[<span class="number">0</span>].<span class="property">artists</span>[<span class="number">0</span>].<span class="property">name</span>,  <span class="comment">//获取歌手名</span></span><br><span class="line">      <span class="attr">musicName</span>: res.<span class="property">data</span>.<span class="property">result</span>.<span class="property">songs</span>[<span class="number">0</span>].<span class="property">name</span>   <span class="comment">//获取歌曲名</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>默认控件上的作者名字，如果 controls 属性值为 false 则设置 author 无效</p>
+<p>主要是觉得这个要简单一点，那个不知道怎么用。也懒得去研究研究，这个也够用了。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">poster</span>=<span class="string">&quot;&#123;&#123;imgSrc&#125;&#125;&quot;</span> <span class="attr">name</span>=<span class="string">&quot;&#123;&#123;musicName&#125;&#125;&quot;</span> <span class="attr">author</span>=<span class="string">&quot;&#123;&#123;author&#125;&#125;&quot;</span> <span class="attr">src</span>=<span class="string">&quot;&#123;&#123;musicUrl&#125;&#125;&quot;</span> <span class="attr">id</span>=<span class="string">&quot;myAudio&quot;</span> <span class="attr">controls</span> <span class="attr">loop</span> <span class="attr">bindplay</span>=<span class="string">&quot;funplay&quot;</span> <span class="attr">bindpause</span>=<span class="string">&quot;funpause&quot;</span> <span class="attr">binderror</span>=<span class="string">&quot;funerror&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>将API接收到的数据，通过<strong>数据绑定</strong>到音频组件上。</p>
+<p>基本功能实现完成。代码还有很多冗杂，不过至少能跑，管它什么轮子。</p>
+<h3 id="点击查看效果演示视频"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://wwr.lanzoui.com/iMByUu7sk8d">点击查看效果演示视频</a><a class="header-anchor" href="#点击查看效果演示视频">#</a></h3>
+<p>2021-9-19-10:48</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://www.yujing.icu">Tiam</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.yujing.icu/artical/ed803555.html">https://www.yujing.icu/artical/ed803555.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.yujing.icu" target="_blank">J's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/wx%E5%B0%8F%E7%A8%8B%E5%BA%8F/">wx小程序</a></div><div class="post_share"><div class="social-share" data-image="http://qiniu.yujing.fit/image/nice/zentree_1.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/artical/d96f0873.html"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://qiniu.yujing.icu/katong/191825-1653909505871e.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">application.yaml配置</div></div></a></div><div class="next-post pull-right"><a href="/artical/1bff3c65.html"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://qiniu.yujing.fit/image/nice/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20201216212306.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">MyBatis</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Waline</span><span class="switch-btn"></span><span class="second-comment">Livere</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div><div><div id="lv-container" data-id="city" data-uid="MTAyMC81Nzk2Ny8zNDQzMA"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://qiniu.yujing.icu/headImage/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20201030005750.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Tiam</div><div class="author-info__description">慢慢而漫漫</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">57</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">74</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">25</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://githubfast.com/tiam-bloom"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://githubfast.com/tiam-bloom" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://blog.csdn.net/qq_50969362" rel="external nofollow noreferrer" target="_blank" title="CSDN"><i class="fa fa-book-open"></i></a><a class="social-icon" href="mailto:tiam_j@qq.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope-open-text"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><b><font color="#e66b6d">知</font> <font color="#e66d98">不</font> <font color="#e66cc6">足</font> <font color="#cc6de6">而</font> <font color="#9770e6">奋</font> <font color="#6d93e6">进</font> ，<font color="#6fcde6">望</font> <font color="#72e6b6">远</font> <font color="#72e689">山</font> <font color="#99e670">而</font> <font color="#cde670">前</font> <font color="#e6df72">行</font> </b> <p align="center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://alioss.yujing.icu/image/fcat.gif?Expires=1683185404&OSSAccessKeyId=TMP.3KiUEwF2Hu1EffFTz8jLsuvtfLJAM8ZNSbFPanzKr7DgqvANZZHJTbPWB8CoySoXmkvbsvWasAztnmzzbdnbSoeEJKec6B&Signature=sND%2FsdRhhK45qA%2Bn938960pEbXI%3D" width="50" alt="mao"></p> <p align="center">微信公众号：带着月亮</p> <p align="center">QQ号：3036293856</p></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C%E9%A1%B5%E9%9D%A2"><span class="toc-number">1.</span> <span class="toc-text">注册页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC"><span class="toc-number">2.</span> <span class="toc-text">页面跳转</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#music%E7%95%8C%E9%9D%A2"><span class="toc-number"></span> <span class="toc-text">music界面</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E6%97%B6%E6%98%BE%E7%A4%BA%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C"><span class="toc-number">1.</span> <span class="toc-text">实时显示搜索结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#player%E7%95%8C%E9%9D%A2"><span class="toc-number"></span> <span class="toc-text">player界面</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92"><span class="toc-number">1.</span> <span class="toc-text">页面数据传递</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%92%AD%E6%94%BE%E6%AD%8C%E6%9B%B2"><span class="toc-number">2.</span> <span class="toc-text">播放歌曲</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%82%B9%E5%87%BB%E6%9F%A5%E7%9C%8B%E6%95%88%E6%9E%9C%E6%BC%94%E7%A4%BA%E8%A7%86%E9%A2%91"><span class="toc-number">3.</span> <span class="toc-text">点击查看效果演示视频</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/artical/cc502626.html" title="原型与继承"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/2023/18.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="原型与继承"/></a><div class="content"><a class="title" href="/artical/cc502626.html" title="原型与继承">原型与继承</a><time datetime="2023-08-16T05:36:48.000Z" title="发表于 2023-08-16 13:36:48">2023-08-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/artical/5ba3d.html" title="websocket聊天室"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://qiniu.yujing.icu/katong/223855-1603895935efcd.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="websocket聊天室"/></a><div class="content"><a class="title" href="/artical/5ba3d.html" title="websocket聊天室">websocket聊天室</a><time datetime="2023-06-26T03:20:12.000Z" title="发表于 2023-06-26 11:20:12">2023-06-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/artical/85116811.html" title="Promise、async和await"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/2023/1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Promise、async和await"/></a><div class="content"><a class="title" href="/artical/85116811.html" title="Promise、async和await">Promise、async和await</a><time datetime="2023-06-13T14:34:12.000Z" title="发表于 2023-06-13 22:34:12">2023-06-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/artical/2766932d.html" title="位运算的应用"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/2023/3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="位运算的应用"/></a><div class="content"><a class="title" href="/artical/2766932d.html" title="位运算的应用">位运算的应用</a><time datetime="2023-06-01T12:32:04.000Z" title="发表于 2023-06-01 20:32:04">2023-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/artical/d807e6df.html" title="模拟实现Spring的IOC"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/2023/20.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="模拟实现Spring的IOC"/></a><div class="content"><a class="title" href="/artical/d807e6df.html" title="模拟实现Spring的IOC">模拟实现Spring的IOC</a><time datetime="2023-05-02T10:06:02.000Z" title="发表于 2023-05-02 18:06:02">2023-05-02</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('http://qiniu.yujing.fit/image/nice/zentree_1.png')"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2023 By Tiam</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="https://beian.miit.gov.cn/" rel="external nofollow noreferrer" target="_blank">渝ICP备2021008108号-1</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadWaline () {
+  function insertCSS () {
+    const link = document.createElement("link")
+    link.rel = "stylesheet"
+    link.href = "https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css"
+    document.head.appendChild(link)
+  }
+
+  function initWaline () {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://comments.yujing.icu',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, null))
+  }
+
+  if (typeof Waline === 'function') initWaline()
+  else {
+    insertCSS()
+    getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js').then(initWaline)
+  }
+}
+
+if ('Waline' === 'Waline' || !true) {
+  if (true) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Waline' === 'Livere' || !true) {
+  if (true) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="富强,民主,文明,和谐,自由,平等,公正,法治,爱国,诚信,敬业,友善" data-fontsize="15px" data-random="true" async="async"></script><script>((window.gitter = {}).chat = {}).options = {
+  disableDefaultChat: true,
+};
+document.addEventListener('gitter-sidecar-ready', (e) => {
+  const GitterChat = e.detail.Chat
+  let chat
+
+  function initGitter () {
+    chat = new GitterChat({
+      room: 'blog-develop-communication/Tiam-room',
+      activationElement: '#chat_btn'
+    });
+  }
+
+  initGitter()
+
+  if (false) {
+    document.addEventListener('pjax:complete', () => {
+      chat.destroy()
+      initGitter()
+    })
+  }
+
+})</script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="async" defer="defer"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>

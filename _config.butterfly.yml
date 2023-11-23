@@ -1,0 +1,525 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Favicon（网站图标）
+favicon: https://qiniu.yujing.icu/headImage/icon.png
+
+# Site
+title: J's Blog
+subtitle: 
+  enable: true
+  # Typewriter Effect (打字效果)
+  effect: true
+  # loop (循環打字)
+  loop: true
+  # source 調用第三方服務
+  # source: false 關閉調用
+  # source: 1  調用一言網的一句話（簡體） https://hitokoto.cn/
+  # source: 2  調用一句網（簡體） http://yijuzhan.com/
+  # source: 3  調用今日詩詞（簡體） https://www.jinrishici.com/
+  # subtitle 會先顯示 source , 再顯示 sub 的內容
+  source: 3
+  # 如果關閉打字效果，subtitle 只會顯示 sub 的第一行文字
+  # sub:   
+  #   - 悟已往之不谏, 知来者之可追.
+  #   - 淡泊以明志, 宁静以致远.
+  #   - 路漫漫其修远兮, 吾将上下而求索.
+  #   - 人生天地之间, 若白驹过隙, 忽然而已.
+  #   - 天道酬勤
+  #   - 莫等闲, 白了少年头, 空悲切. 
+  #   - 我们不是要做巨人, 而是站在巨人的肩上.
+  #   - 星星之火, 可以燎原.
+  #   - 把时间留给热爱的事.
+  #   - 让过去过去, 让忘记忘记.
+  #   - Just want you to stay with me.
+description: ''
+keywords: 'Tiam'
+author: Tiam
+language: zh-CN #语言
+timezone: Asia/Shanghai 
+
+# 菜单栏
+menu:
+  主页: / || fas fa-home
+  博文 || fa fa-graduation-cap:
+  # 博文 || fa fa-book:
+    分类: /categories/ || fa fa-archive
+    标签: /tags/ || fa fa-tags
+    归档: /archives/ || fa fa-folder-open
+  # 生活 || fas fa-list:
+    # 分享: /shuoshuo/ || fa fa-comments-o
+    # 音乐: /music/ || fa fa-music
+    # 影视: /movies/ || fas fa-video
+  相册: /photos/ || fa fa-camera-retro
+
+  友链: /links/ || fa fa-link
+  留言板: /comment/ || fa fa-paper-plane
+  #留言板: /messageboard/ || fa fa-paper-plane
+  关于笔者: /about/ || fas fa-heart  
+
+
+# Local search 本地搜索功能
+local_search:
+  enable: true
+  labels:
+    input_placeholder: Search for Posts
+    hits_empty: "We didn't find any results for the search: ${query}" # 如果没有查到内容相关内容显示
+
+# 主页头像
+avatar:
+  img: http://qiniu.yujing.icu/headImage/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20201030005750.jpg
+  effect: false #头像会一直转圈 
+
+# URL
+## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
+url: https://yujing.icu
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link:
+  enable: true # Open external links in new tab
+  field: site # Apply to the whole site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+
+# Category & Tag
+default_category: uncategorized
+# category_map:
+# tag_map:
+
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+## updated_option supports 'mtime', 'date', 'empty'
+updated_option: 'mtime'
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Include / Exclude file(s)
+## include:/exclude: options only apply to the 'source/' folder
+include:
+exclude:
+ignore:
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: butterfly
+
+# Deployment
+## Docs: https://hexo.io/docs/one-command-deployment
+deploy:
+  type: git
+  # repository: https://github.com/tiam-bloom/tiam-bloom.github.io.git
+  repository: git@github.com:tiam-bloom/tiam-bloom.github.io.git
+  branch: main
+
+
+
+
+## 以下为新增配置
+
+# 代码高亮样式：
+highlight_theme: mac
+# 超过200px自动折叠
+highlight_height_limit: 200 # unit: px
+
+# 主题支持代码复製功能
+highlight_copy: true
+
+# 主页 的 top_img
+index_img: "http://qiniu.yujing.icu/katong/index.jpg"
+
+# 文章详情页的顶部图片
+# default_top_img: /img/default_top_img.jpg #我设置的本地图片
+
+# 归档页顶部图片
+# archive_img: /img/archive.jpg
+
+# tag页顶部图
+# tag_img: /img/tag_img.jpg
+
+# category页顶部图
+# category_img: /img/category_img.jpg
+
+# footer是否显示图片背景(与 top_img一致)
+footer_bg: true
+
+default_top_img: "/img/232917-16369901577a46.jpg"
+
+# 文章封面
+cover:
+  index_enable: true #  是否展示文章封面
+  aside_enable: true
+  archives_enable: true
+  position: both # 封面展示的位置 left/right/both
+  # 当没有设置cover时，默认展示的文章封面
+  default_cover:
+    # 当配置多张图片时，会随机选择一张作为 cover. 此时写法为
+    - http://qiniu.yujing.icu/image/nice/ali.jpg
+    - http://qiniu.yujing.icu/katong/002101-166809726147ad.jpg
+    - http://qiniu.yujing.icu/katong/002358-166809743875d0.jpg
+    - http://qiniu.yujing.icu/katong/002838-1667579318f5ba.jpg
+    - http://qiniu.yujing.icu/katong/004630-16460667904dd2.jpg
+    - http://qiniu.yujing.icu/katong/191825-1653909505871e.jpg
+    - http://qiniu.yujing.icu/katong/201941-16228091810a47.jpg
+    - http://qiniu.yujing.icu/katong/223855-1603895935efcd.jpg
+    - http://qiniu.yujing.icu/katong/224716-1619189236e4d9.jpg
+    - http://qiniu.yujing.icu/katong/225723-1665327443d7cb.jpg
+    - http://qiniu.yujing.icu/katong/232917-16369901577a46.jpg
+    - http://qiniu.yujing.icu/katong/232957-16341389973a59.jpg
+    - http://qiniu.yujing.icu/katong/234031-1656430831f0e2.jpg
+    - http://qiniu.yujing.icu/katong/234958-160502339805f5.jpg
+    - /img/2023/1.jpg 
+    - /img/2023/10.jpg
+    - /img/2023/11.jpg
+    - /img/2023/12.jpg
+    - /img/2023/13.jpg
+    - /img/2023/14.jpg
+    - /img/2023/15.jpg
+    - /img/2023/16.jpg
+    - /img/2023/17.jpg
+    - /img/2023/18.jpg
+    - /img/2023/19.jpg
+    - /img/2023/2.jpg 
+    - /img/2023/20.jpg
+    - /img/2023/21.jpg
+    - /img/2023/22.jpg
+    - /img/2023/23.jpg
+    - /img/2023/3.jpg 
+    - /img/2023/4.jpg 
+    - /img/2023/5.jpg 
+    - /img/2023/6.jpg 
+    - /img/2023/7.jpg 
+    - /img/2023/8.jpg 
+    - /img/2023/9.jpg 
+
+# 图片懒加载
+lazyload:
+  enable: true
+  loadingImg: "http://qiniu.yujing.icu/image/gif/20180919030733567.gif"
+
+# Typewriter Effect (打字效果)
+# https://github.com/disjukr/activate-power-mode
+activate_power_mode:
+  enable: true
+  colorful: true # open particle animation (冒光特效)
+  shake: false #  open shake (抖動特效)
+  mobile: false
+
+# 好看的彩带背景，会飘动
+canvas_fluttering_ribbon:
+  enable: true
+  mobile: true # false 手机端不显示 true 手机端显示
+
+# 点击出现文字，文字可自行修改
+ClickShowText:
+  enable: true
+  text:
+    - 富强
+    - 民主
+    - 文明
+    - 和谐
+    - 自由
+    - 平等
+    - 公正
+    - 法治
+    - 爱国
+    - 诚信
+    - 敬业
+    - 友善
+  fontSize: 15px
+  random: true # 文字随机显示
+  mobile: false
+
+
+# 侧边栏排版, 可自行决定哪个项目需要显示，可决定位置，也可以设置不显示侧边栏。
+aside:
+  enable: true
+  hide: false
+  button: true
+  mobile: false # display on mobile
+  position: right # left or right
+  card_author:
+    enable: true
+    description: 慢慢而漫漫
+    button:
+      enable: true
+      icon: fab fa-github
+      text: Follow Me #按钮文字
+      link: https://githubfast.com/tiam-bloom
+  card_announcement:
+    enable: true
+    content:
+      <b><font color="#e66b6d">知</font> <font color="#e66d98">不</font> <font color="#e66cc6">足</font> <font color="#cc6de6">而</font> <font color="#9770e6">奋</font> <font color="#6d93e6">进</font> ，<font color="#6fcde6">望</font> <font color="#72e6b6">远</font> <font color="#72e689">山</font> <font color="#99e670">而</font> <font color="#cde670">前</font> <font color="#e6df72">行</font> </b>
+      <p align="center"><img src="https://alioss.yujing.icu/image/fcat.gif?Expires=1683185404&OSSAccessKeyId=TMP.3KiUEwF2Hu1EffFTz8jLsuvtfLJAM8ZNSbFPanzKr7DgqvANZZHJTbPWB8CoySoXmkvbsvWasAztnmzzbdnbSoeEJKec6B&Signature=sND%2FsdRhhK45qA%2Bn938960pEbXI%3D" width="50" alt="mao"></p>
+      <p align="center">微信公众号：带着月亮</p>
+      <p align="center">QQ号：3036293856</p>
+  card_recent_post:
+    enable: true
+    limit: 5 # if set 0 will show all
+    sort: date # date or updated
+    sort_order: # Don't modify the setting unless you know how it works
+  card_categories:
+    enable: true
+    limit: 8 # if set 0 will show all
+    expand: none # none/true/false
+    sort_order: # Don't modify the setting unless you know how it works
+  card_tags:
+    enable: true
+    limit: 40 # if set 0 will show all
+    color: true
+    sort_order: # Don't modify the setting unless you know how it works
+  card_archives:
+    enable: true
+    type: monthly # yearly or monthly
+    format: MMMM YYYY # eg: YYYY年MM月
+    order: -1 # Sort of order. 1, asc for ascending; -1, desc for descending
+    limit: 8 # if set 0 will show all
+    sort_order: # Don't modify the setting unless you know how it works
+  card_webinfo:
+    enable: true
+    post_count: true
+    last_push_date: true
+    sort_order: # Don't modify the setting unless you know how it works
+  card_tags color: true
+
+# 社交账号链接
+social:
+   fab fa-github: https://githubfast.com/tiam-bloom || Github
+   fa fa-book-open: https://blog.csdn.net/qq_50969362 || CSDN
+   # fab fa-qq:  tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=728831102&website=www.oicqzone.com || QQ
+   fas fa-envelope-open-text: mailto:tiam_j@qq.com || Email
+
+
+# 访问人数
+busuanzi:
+  site_uv: true
+  site_pv: true
+  page_pv: true
+
+# 运行时间
+runtimeshow:
+  enable: true
+  publish_date: 11/18/2022 00:00:00  
+  ##网页开通时间
+  #格式: 月/日/年 时间
+  #也可以写成 年/月/日 时间
+
+
+
+# 字数统计
+wordcount:
+  enable: true
+  post_wordcount: true
+  min2read: true
+  total_wordcount: true
+
+# 星空背景
+inject:
+  bottom: 
+    - <canvas id="universe"></canvas>
+    - <script defer src="/js/universe.js"></script>
+  head:
+    - <link rel="stylesheet" href="/css/universe.css">
+    - <link rel="stylesheet" href="/css/background.css">
+
+# background: url(https://i.loli.net/2019/09/09/5oDRkWVKctx2b6A.png)
+
+# 版权信息
+post_copyright:
+  enable: true
+  decode: true
+  license: CC BY-NC-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+# Snackbar 弹窗
+# https://github.com/polonel/SnackBar
+# position 弹窗位置
+# 可选 top-left / top-center / top-right / bottom-left / bottom-center / bottom-right
+snackbar:
+  enable: true
+  position: bottom-left
+  bg_light: '#49b1f5' #light mode时弹窗背景
+  bg_dark: '#2d3035' #dark mode时弹窗背景
+
+# 页脚
+footer:
+  owner:
+    enable: true
+    since: 2021
+  custom_text: <a href="https://beian.miit.gov.cn/" target="_blank">渝ICP备2021008108号-1</a>
+
+# 阅读模式
+readmode: true
+
+# 404界面
+error_404:
+  enable: true
+  subtitle: "页面沒有找到"
+  background: "http://qiniu.yujing.icu/typora_img/8460_list.jpg"
+
+# 文章推荐
+related_post:
+  enable: true
+  limit: 3 # 顯示推薦文章數目
+  date_type: created # or created or updated 文章日期顯示創建日或者更新日
+
+# 暗黑模式
+darkmode:
+  enable: true
+  # dark mode和 light mode切换按钮
+  button: true
+  autoChangeMode: false
+
+# 页面锚点
+# when you scroll in post , the url will update according to header id.
+anchor:
+  button:
+    enable: true
+    always_show: true
+    icon: "\\f3c5" # the unicode value of Font Awesome icon, such as '\3423'
+  auto_update: true # when you scroll in post, the URL will update according to header id.
+
+# 主题色 - 无效果【2023-1-23 21:57:29 星期一】
+theme_color:
+  enable: true
+  main: "#49B1F5"
+  paginator: "#00c4b6"
+  button_hover: "#FF7242"
+  text_selection: "#00c4b6"
+  link_color: "#99a9bf"
+  meta_color: "#858585"
+  hr_color: "#A4D8FA"
+  code_foreground: "#F47466"
+  code_background: "rgba(27, 31, 35, .05)"
+  toc_color: "#00c4b6"
+  blockquote_padding_color: "#49b1f5"
+  blockquote_background_color: "#49b1f5"
+  scrollbar_color: "#49b1f5"
+
+# 【2023-1-22 20:52:57 星期日】
+
+# 在綫聊天工具
+chat_btn: true
+chat_hide_show: true
+
+# gitter
+# https://gitter.im/
+gitter:
+  enable: true
+  room: "blog-develop-communication/Tiam-room"
+
+# 【2023-1-23 12:18:54 星期一】 评论系统
+comments:
+  # Up to two comments system, the first will be shown as default
+  # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo
+  use: Waline,Livere
+  text: true # Display the comment name next to the button
+  # lazyload: The comment system will be load when comment element enters the browser's viewport.
+  # If you set it to true, the comment count will be invalid
+  lazyload: true
+  count: true # Display comment count in top_img
+  card_post_count: false # Display comment count in Home Page
+
+waline:
+  serverURL: "https://comments.yujing.icu"  # Waline server address url
+  bg: # waline background
+  pageview: false
+  option:
+
+livere:
+  uid: MTAyMC81Nzk2Ny8zNDQzMA
+
+# Artitalk 【2023-1-24 21:03:16 星期二】 留言板(说说)功能
+# see https://artitalk.js.org/
+artitalk:
+  enable: true
+  appId: X4YEzuGw0KE3tQyftV65fQcq-MdYXbMMI
+  appKey: 9xYQkZoAfqOQvYRPzdl2SnOz
+  path: comment
+  js:
+  option:
+  front_matter:
+
+# 外链防止- 好像无效 
+# https://butterfly.js.org/posts/4073eda/#%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%96%A6
+nofollow:
+  enable: true
+  field: site
+  exclude:
+    - 'qiniu.yujing.icu'
+
+
+# 【2023-2-10 12:01:15 星期五】
+# tag-plugins-plus
+# see https://akilar.top/posts/615e2dec/
+tag_plugins:
+  enable: true # 开关
+  priority: 5 #过滤器优先权
+  issues: false #issues标签依赖注入开关
+  link:
+    placeholder: /img/link.png #link_card标签默认的图标图片
+  CDN:
+    anima: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css #动画标签anima的依赖
+    jquery: https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js #issues标签依赖
+    issues: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/issues.js #issues标签依赖
+    iconfont: //at.alicdn.com/t/font_2032782_8d5kxvn09md.js #参看https://akilar.top/posts/d2ebecef/
+    carousel: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js
+    tag_plugins_css: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css
+
+
+

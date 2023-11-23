@@ -1,0 +1,720 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>powershell命令 与 一些常用快捷键 | J's Blog</title><meta name="author" content="Tiam"><meta name="copyright" content="Tiam"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="快捷键  记录一些常用快捷键和cmd命令  pwoershell命令#   powershell就是cmd的增强版，命令几乎与shell中相同   推荐使用powershell，还兼容了cmd中的命令   官方手册: https:&#x2F;&#x2F;learn.microsoft.com&#x2F;zh-cn&#x2F;powershell   https:&#x2F;&#x2F;learn.microsoft.com&#x2F;zh-cn&#x2F;powershell">
+<meta property="og:type" content="article">
+<meta property="og:title" content="powershell命令 与 一些常用快捷键">
+<meta property="og:url" content="https://www.yujing.icu/artical/dae06e64.html">
+<meta property="og:site_name" content="J&#39;s Blog">
+<meta property="og:description" content="快捷键  记录一些常用快捷键和cmd命令  pwoershell命令#   powershell就是cmd的增强版，命令几乎与shell中相同   推荐使用powershell，还兼容了cmd中的命令   官方手册: https:&#x2F;&#x2F;learn.microsoft.com&#x2F;zh-cn&#x2F;powershell   https:&#x2F;&#x2F;learn.microsoft.com&#x2F;zh-cn&#x2F;powershell">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.yujing.icu/img/2023/10.jpg">
+<meta property="article:published_time" content="2023-02-16T17:19:01.000Z">
+<meta property="article:modified_time" content="2023-02-16T17:50:58.725Z">
+<meta property="article:author" content="Tiam">
+<meta property="article:tag" content="idea">
+<meta property="article:tag" content="powershell">
+<meta property="article:tag" content="cmd">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.yujing.icu/img/2023/10.jpg"><link rel="shortcut icon" href="https://qiniu.yujing.icu/headImage/icon.png"><link rel="canonical" href="https://www.yujing.icu/artical/dae06e64"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#2d3035","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'powershell命令 与 一些常用快捷键',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-02-17 01:50:58'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/universe.css"><link rel="stylesheet" href="/css/background.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://qiniu.yujing.icu/headImage/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20201030005750.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">57</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">74</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">25</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/2023/10.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">J's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">powershell命令 与 一些常用快捷键</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-02-16T17:19:01.000Z" title="发表于 2023-02-17 01:19:01">2023-02-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-02-16T17:50:58.725Z" title="更新于 2023-02-17 01:50:58">2023-02-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B/">记录一下</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="powershell命令 与 一些常用快捷键"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>快捷键</h1>
+<blockquote>
+<p>记录一些常用快捷键和cmd命令</p>
+</blockquote>
+<h2 id="pwoershell命令">pwoershell命令<a class="header-anchor" href="#pwoershell命令">#</a></h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><code>powershell</code>就是<code>cmd</code>的增强版，命令几乎与<code>shell</code>中相同</p>
+</li>
+<li class="lvl-2">
+<p>推荐使用<code>powershell</code>，还兼容了<code>cmd</code>中的命令</p>
+</li>
+<li class="lvl-2">
+<p>官方手册: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://learn.microsoft.com/zh-cn/powershell">https://learn.microsoft.com/zh-cn/powershell</a></p>
+</li>
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://learn.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_command_syntax?view=powershell-7.3#command-name">https://learn.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_command_syntax?view=powershell-7.3#command-name</a></p>
+</li>
+</ul>
+<blockquote>
+<p>使用技巧: 对于需要经常使用的命令, 可以创建编辑后缀为<code>.bat</code>的文件，点击直接运行命令</p>
+<p>或者使用后缀<code>.ps1</code>的powershell脚本文件</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令(不区分大小写)</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>help</code></td>
+<td>查看所有可用命令及其简要说明</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>help cd</code></td>
+<td>查看<code>cd</code>命令的详细使用说明</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>powershell</code></td>
+<td><code>cmd</code>黑窗口进入<code>powershell</code>，路径前带<code>PS</code>，eg：<code>PS D:\&gt;</code></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>ping +域名</code></td>
+<td>解析域名IP地址</td>
+</tr>
+<tr>
+<td style="text-align:center">`netstat -ano</td>
+<td>findstr “80”`</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>taskkill /pid 4 /f</code></td>
+<td>强制停止<code>pid</code>为<code>4</code>的进程</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>cd</code></td>
+<td>显示当前所在路径</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>cd ..</code></td>
+<td>返回上一级</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>cd dir</code></td>
+<td>进入名为<code>dir</code>的文件夹</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>d:</code></td>
+<td>切换到<code>D</code>盘</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>dir</code></td>
+<td>显示当前目录下的所有文件及文件夹, 类似<code>shell</code>中的<code>ls</code>，<code>powershell</code>支持<code>ls</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>del</code></td>
+<td>删除文件</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>rd /s /q dir</code></td>
+<td>删除整个<code>dir</code>文件夹，不显示是否删除</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>Linux.md</code></td>
+<td>直接输入文件名, 将会使用默认程序打开文件，类似GUI中双击文件的效果</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>type Linux.txt</code></td>
+<td>查看文本文件内容</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>cls</code></td>
+<td>清屏，类似<code>shell</code>中的<code>clear</code></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>iwr</code> / <code>wget</code> / <code>curl</code> + <code>&lt;uri&gt;</code></td>
+<td>Invoke-WebRequest, 解析web请求</td>
+</tr>
+</tbody>
+</table>
+<h2 id="IDEA">IDEA<a class="header-anchor" href="#IDEA">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em><strong>Ctrl+E</strong></em></td>
+<td>最近打开的文件</td>
+</tr>
+<tr>
+<td><em><strong>Ctrl+Shift+V</strong></em></td>
+<td>历史粘贴板</td>
+</tr>
+<tr>
+<td><em><strong>Ctrl+W</strong></em></td>
+<td>按一定规则扩选</td>
+</tr>
+<tr>
+<td><em><strong>Shift+F6</strong></em></td>
+<td>选中目录结构的文件，重命名</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + R</td>
+<td>搜索指定范围文件，替换文字</td>
+</tr>
+<tr>
+<td><em><strong>Ctrl+R</strong></em></td>
+<td>当前文件 查询替换</td>
+</tr>
+<tr>
+<td>Ctrl + Tab</td>
+<td>切换最近一个标签,类似window的Alt+tab效果</td>
+</tr>
+<tr>
+<td>Ctrl+  [</td>
+<td>移动光标到当前所在代码的花括号开始位置，反之移动到结束位置</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + J</td>
+<td>自动将下一行合并到当前行末尾</td>
+</tr>
+<tr>
+<td>Ctrl+N或 双击Shift</td>
+<td>搜索文件/类</td>
+</tr>
+<tr>
+<td>光标在某一个词上-Ctrl+Q</td>
+<td>显示JavaDoc的结果</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+S</td>
+<td>打开设置</td>
+</tr>
+<tr>
+<td><em><strong>Ctrl+F</strong></em></td>
+<td>搜索当前页面 词</td>
+</tr>
+<tr>
+<td>Shift+F2</td>
+<td>提示当前页面可优化的地方</td>
+</tr>
+<tr>
+<td><em><strong>Alt+F8</strong></em></td>
+<td>输入变量名，查看当前变量的值–deBug时使用</td>
+</tr>
+<tr>
+<td><em><strong>Ctrl + G</strong></em></td>
+<td>在当前文件跳转到指定行处</td>
+</tr>
+<tr>
+<td>Ctrl + J</td>
+<td>给出提示，例：输入sout如果提示消失，Ctrl+J给出提示</td>
+</tr>
+<tr>
+<td>Ctrl+P</td>
+<td>输入方法名后，使用给出方法参数提示</td>
+</tr>
+<tr>
+<td><em><strong>Ctrl + U</strong></em></td>
+<td>前往当前光标所在的方法的父类的方法 / 接口定义</td>
+</tr>
+<tr>
+<td>Ctrl+B  /  F4</td>
+<td>选中方法后，进入光标所在的方法/变量的接口或是定义出，等效于 Ctrl + 左键单击</td>
+</tr>
+<tr>
+<td><em><strong>Ctrl + H</strong></em></td>
+<td>显示当前类的层次结构，继承或实现</td>
+</tr>
+<tr>
+<td><em><strong>Ctrl + O</strong></em></td>
+<td>选择可重写的方法</td>
+</tr>
+<tr>
+<td>Ctrl + I</td>
+<td>选择可继承的方法</td>
+</tr>
+<tr>
+<td><em><strong>Ctrl + F12</strong></em></td>
+<td>弹出当前文件结构层，可以在弹出的层上直接输入，进行筛选，类似Alt+7</td>
+</tr>
+<tr>
+<td><em><strong>Ctrl + F11</strong></em></td>
+<td>选中文件 / 文件夹  /某一行，使用助记符设定 / 取消书签</td>
+</tr>
+<tr>
+<td>F11</td>
+<td>选中文件 / 文件夹  /某一行,  标记/消除 书签</td>
+</tr>
+<tr>
+<td>Shift + F11</td>
+<td>弹出书签显示层</td>
+</tr>
+<tr>
+<td>Ctrl+ 1~9</td>
+<td>跳转书签所标记数字的文件夹</td>
+</tr>
+<tr>
+<td>Ctrl + Home/End</td>
+<td>跳到文件头/尾，等同于PgUp/PgDn</td>
+</tr>
+<tr>
+<td>Ctrl + 前/后方向键</td>
+<td>等效于鼠标滚轮向 前/后 效果</td>
+</tr>
+<tr>
+<td>Ctrl + 左/右方向键</td>
+<td>光标跳转到当前单词 / 中文句的 左/右 侧开头位置</td>
+</tr>
+<tr>
+<td>Ctrl + T/K</td>
+<td>版本控制 更新/提交 项目</td>
+</tr>
+<tr>
+<td><em><strong>Alt + F3</strong></em></td>
+<td>选中文本，逐个往下查找相同文本，并高亮显示</td>
+</tr>
+<tr>
+<td><em><strong>Alt + F7</strong></em></td>
+<td>查找光标所在的方法 / 变量 / 类被调用的地方</td>
+</tr>
+<tr>
+<td>Alt + 左/右方向键</td>
+<td>按左/右 方向切换当前已打开的导航标签页</td>
+</tr>
+<tr>
+<td>Alt + 前/后方向键</td>
+<td>当前光标跳转到当前文件的前/后一个方法名位置</td>
+</tr>
+<tr>
+<td>Shift + Home/End</td>
+<td>选中光标到当前行头/尾位置</td>
+</tr>
+<tr>
+<td>Shift + 滚轮前后滚动</td>
+<td>当前文件的横向滚动轴滚动</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + O</td>
+<td>优化导入的类，可以对当前文件和整个包目录使用 （必备）</td>
+</tr>
+<tr>
+<td><em><strong>Ctrl + Shift + Z</strong></em></td>
+<td>取消撤销 （必备）</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + U</td>
+<td>对选中的代码进行大 / 小写轮流转换 （必备）</td>
+</tr>
+<tr>
+<td><em><strong>Ctrl+P</strong></em></td>
+<td>光标在方法括号内,提示参数信息</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + Space</td>
+<td>智能代码提示</td>
+</tr>
+<tr>
+<td><em><strong>Ctrl + Shift + Enter</strong></em></td>
+<td>自动结束代码，行末自动添加分号 （必备）</td>
+</tr>
+<tr>
+<td><em><strong>Ctrl + Shift + Alt + C</strong></em></td>
+<td>复制参考信息,可用于复制当前文件的<strong>相对路径</strong> ,注意:光标应在文件中空白地方</td>
+</tr>
+<tr>
+<td><em><strong>Ctrl+Shift+C</strong></em></td>
+<td>复制当前文件<strong>绝对路径</strong></td>
+</tr>
+<tr>
+<td>Ctrl + Shift + Alt + V</td>
+<td>无格式黏贴</td>
+</tr>
+<tr>
+<td><em><strong>F2</strong></em></td>
+<td>跳转到下一个高亮错误 或 警告位置 （必备）</td>
+</tr>
+<tr>
+<td>F7</td>
+<td>在 Debug 模式下，进入下一步，如果当前行断点是一个方法，则进入当前方法体内，如果该方法体还有方法，则不会进入该内嵌的方法中</td>
+</tr>
+<tr>
+<td>F8</td>
+<td>在 Debug 模式下，进入下一步，如果当前行断点是一个方法，则不进入当前方法体内</td>
+</tr>
+<tr>
+<td><em><strong>Alt + Shift + C</strong></em></td>
+<td>查看最近操作项目的变化情况列表</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+V<br>按住Alt,双击Enter<br>在后面输入&quot; .var&quot;</td>
+<td><em><strong><font color = "red">自动生成左边变量</font></strong></em>，三种方式</td>
+</tr>
+<tr>
+<td><strong>后面输入 .arg</strong></td>
+<td>包裹整体   例:Comparable.arg  ==&gt;  (Comparable)</td>
+</tr>
+<tr>
+<td><strong>后面输入 .return</strong></td>
+<td>返回参数  例:Comparable.return  ==&gt;  return Comparable</td>
+</tr>
+<tr>
+<td><strong>Ctrl+Alt+T</strong></td>
+<td>选中代码块,  带注释的自定义代码块</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+Del</td>
+<td>删除包裹代码块外层,例: 需求，我想删除外面的循环语句，留下循环语句内的内容（光标需在for循环内）</td>
+</tr>
+<tr>
+<td>插件Ace Jump</td>
+<td>快速移动光标</td>
+</tr>
+<tr>
+<td>去除拼接字符串的引号与换行符</td>
+<td>选中，右键，Show Content Actions ，Copy string concatenation text to the clipboard</td>
+</tr>
+<tr>
+<td><em><strong>Ctrl+Alt+O</strong></em></td>
+<td>删除未使用的 import</td>
+</tr>
+<tr>
+<td>ctrl+shift+T</td>
+<td>创建测试类</td>
+</tr>
+</tbody>
+</table>
+<h2 id="浏览器快捷键">浏览器快捷键<a class="header-anchor" href="#浏览器快捷键">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+F</td>
+<td>此页面查询内容</td>
+</tr>
+<tr>
+<td>Ctrl+H/Ctrl+Shift+H</td>
+<td>打开历史浏览记录窗口</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+S</td>
+<td>截图</td>
+</tr>
+<tr>
+<td><strong>Ctrl + Shift + T</strong></td>
+<td>撤销关闭标签页</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="电脑快捷键">电脑快捷键<a class="header-anchor" href="#电脑快捷键">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ctrl+Shilft+Esc</strong></td>
+<td>打开任务管理器</td>
+</tr>
+<tr>
+<td>Alt+F4</td>
+<td>关机界面</td>
+</tr>
+<tr>
+<td>win+E</td>
+<td>打开我的电脑</td>
+</tr>
+<tr>
+<td>WIN+Shift+S</td>
+<td>系统截图</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+Del</td>
+<td>系统界面</td>
+</tr>
+<tr>
+<td>WIN+I</td>
+<td>打开设置</td>
+</tr>
+<tr>
+<td>拖住窗口轻微晃动</td>
+<td>最小化其他所有窗口</td>
+</tr>
+<tr>
+<td>WIN+X</td>
+<td>多功能窗口</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+F12</td>
+<td>显卡控制面板</td>
+</tr>
+<tr>
+<td>WIN+tab</td>
+<td>时间线窗口</td>
+</tr>
+<tr>
+<td>Alt+tab</td>
+<td>切换窗口</td>
+</tr>
+</tbody>
+</table>
+<h2 id="WIN-R">WIN+R<a class="header-anchor" href="#WIN-R">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>WIN+R 运行界面与命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>control</td>
+<td>打开控制面板</td>
+</tr>
+<tr>
+<td>powershell</td>
+<td>Stop-Process -Name explorer 重启explorer服务</td>
+</tr>
+<tr>
+<td>services.msc</td>
+<td>打开服务面板</td>
+</tr>
+<tr>
+<td>regedit</td>
+<td>注册表----一定一定不能轻易改!!!</td>
+</tr>
+<tr>
+<td>cmd</td>
+<td>打开cmd命令窗口</td>
+</tr>
+<tr>
+<td>msconfig</td>
+<td>系统配置,系统信息</td>
+</tr>
+</tbody>
+</table>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://www.yujing.icu">Tiam</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.yujing.icu/artical/dae06e64.html">https://www.yujing.icu/artical/dae06e64.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.yujing.icu" target="_blank">J's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/idea/">idea</a><a class="post-meta__tags" href="/tags/powershell/">powershell</a><a class="post-meta__tags" href="/tags/cmd/">cmd</a></div><div class="post_share"><div class="social-share" data-image="/img/2023/10.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/artical/f42e100c.html"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/2023/4.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">23设计模式与6大原则</div></div></a></div><div class="next-post pull-right"><a href="/artical/98b5ec51.html"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/2023/3.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">typescript</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Waline</span><span class="switch-btn"></span><span class="second-comment">Livere</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div><div><div id="lv-container" data-id="city" data-uid="MTAyMC81Nzk2Ny8zNDQzMA"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://qiniu.yujing.icu/headImage/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20201030005750.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Tiam</div><div class="author-info__description">慢慢而漫漫</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">57</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">74</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">25</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://githubfast.com/tiam-bloom"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://githubfast.com/tiam-bloom" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://blog.csdn.net/qq_50969362" rel="external nofollow noreferrer" target="_blank" title="CSDN"><i class="fa fa-book-open"></i></a><a class="social-icon" href="mailto:tiam_j@qq.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope-open-text"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><b><font color="#e66b6d">知</font> <font color="#e66d98">不</font> <font color="#e66cc6">足</font> <font color="#cc6de6">而</font> <font color="#9770e6">奋</font> <font color="#6d93e6">进</font> ，<font color="#6fcde6">望</font> <font color="#72e6b6">远</font> <font color="#72e689">山</font> <font color="#99e670">而</font> <font color="#cde670">前</font> <font color="#e6df72">行</font> </b> <p align="center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://alioss.yujing.icu/image/fcat.gif?Expires=1683185404&OSSAccessKeyId=TMP.3KiUEwF2Hu1EffFTz8jLsuvtfLJAM8ZNSbFPanzKr7DgqvANZZHJTbPWB8CoySoXmkvbsvWasAztnmzzbdnbSoeEJKec6B&Signature=sND%2FsdRhhK45qA%2Bn938960pEbXI%3D" width="50" alt="mao"></p> <p align="center">微信公众号：带着月亮</p> <p align="center">QQ号：3036293856</p></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">快捷键</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#pwoershell%E5%91%BD%E4%BB%A4"><span class="toc-number">1.1.</span> <span class="toc-text">pwoershell命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IDEA"><span class="toc-number">1.2.</span> <span class="toc-text">IDEA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">1.3.</span> <span class="toc-text">浏览器快捷键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B5%E8%84%91%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">1.4.</span> <span class="toc-text">电脑快捷键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WIN-R"><span class="toc-number">1.5.</span> <span class="toc-text">WIN+R</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/artical/cc502626.html" title="原型与继承"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/2023/18.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="原型与继承"/></a><div class="content"><a class="title" href="/artical/cc502626.html" title="原型与继承">原型与继承</a><time datetime="2023-08-16T05:36:48.000Z" title="发表于 2023-08-16 13:36:48">2023-08-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/artical/5ba3d.html" title="websocket聊天室"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://qiniu.yujing.icu/katong/223855-1603895935efcd.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="websocket聊天室"/></a><div class="content"><a class="title" href="/artical/5ba3d.html" title="websocket聊天室">websocket聊天室</a><time datetime="2023-06-26T03:20:12.000Z" title="发表于 2023-06-26 11:20:12">2023-06-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/artical/85116811.html" title="Promise、async和await"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/2023/1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Promise、async和await"/></a><div class="content"><a class="title" href="/artical/85116811.html" title="Promise、async和await">Promise、async和await</a><time datetime="2023-06-13T14:34:12.000Z" title="发表于 2023-06-13 22:34:12">2023-06-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/artical/2766932d.html" title="位运算的应用"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/2023/3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="位运算的应用"/></a><div class="content"><a class="title" href="/artical/2766932d.html" title="位运算的应用">位运算的应用</a><time datetime="2023-06-01T12:32:04.000Z" title="发表于 2023-06-01 20:32:04">2023-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/artical/d807e6df.html" title="模拟实现Spring的IOC"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/2023/20.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="模拟实现Spring的IOC"/></a><div class="content"><a class="title" href="/artical/d807e6df.html" title="模拟实现Spring的IOC">模拟实现Spring的IOC</a><time datetime="2023-05-02T10:06:02.000Z" title="发表于 2023-05-02 18:06:02">2023-05-02</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/2023/10.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2023 By Tiam</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="https://beian.miit.gov.cn/" rel="external nofollow noreferrer" target="_blank">渝ICP备2021008108号-1</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadWaline () {
+  function insertCSS () {
+    const link = document.createElement("link")
+    link.rel = "stylesheet"
+    link.href = "https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css"
+    document.head.appendChild(link)
+  }
+
+  function initWaline () {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://comments.yujing.icu',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, null))
+  }
+
+  if (typeof Waline === 'function') initWaline()
+  else {
+    insertCSS()
+    getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js').then(initWaline)
+  }
+}
+
+if ('Waline' === 'Waline' || !true) {
+  if (true) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Waline' === 'Livere' || !true) {
+  if (true) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="富强,民主,文明,和谐,自由,平等,公正,法治,爱国,诚信,敬业,友善" data-fontsize="15px" data-random="true" async="async"></script><script>((window.gitter = {}).chat = {}).options = {
+  disableDefaultChat: true,
+};
+document.addEventListener('gitter-sidecar-ready', (e) => {
+  const GitterChat = e.detail.Chat
+  let chat
+
+  function initGitter () {
+    chat = new GitterChat({
+      room: 'blog-develop-communication/Tiam-room',
+      activationElement: '#chat_btn'
+    });
+  }
+
+  initGitter()
+
+  if (false) {
+    document.addEventListener('pjax:complete', () => {
+      chat.destroy()
+      initGitter()
+    })
+  }
+
+})</script><script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="async" defer="defer"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>
